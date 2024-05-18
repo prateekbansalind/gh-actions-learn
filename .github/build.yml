@@ -1,0 +1,18 @@
+# .github/workflows/build.yml
+name: Node Build.
+
+on: [push]
+
+jobs:
+    mainbuild:
+ 
+        runs-on: ubuntu
+     
+         
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - name: Install NPM and build.
+      run: |
+        echo "Hello!"
