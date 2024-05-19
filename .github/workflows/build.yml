@@ -11,9 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - uses: actions/upload-artifact
+      - name: Upload README.md
+        uses: actions/upload-artifact@v2
         with:
-          name: harness-build-logs
-          path: |
-              bin/output/logs/harness.log
-              bin/output/logs/harnessbuild.txt
+          name: readme-md
+          path: ./README.md
