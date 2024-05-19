@@ -13,5 +13,7 @@ jobs:
 
       - uses: actions/upload-artifact
         with:
-          name: readme-md
-          path: ./README.md
+          name: harness-build-logs
+          path: |
+              bin/output/logs/harness.log
+              bin/output/logs/harnessbuild.txt
