@@ -16,3 +16,10 @@ jobs:
           echo "Commit SHA: $GITHUB_SHA"
           echo "Branch/Tag: $GITHUB_REF"
           echo "Workflow: $GITHUB_WORKFLOW"
+        env:
+            PROJECT_SERVER: PH202323V
+            PROJECT_DATABASE: HAMaster    
+    
+      - run: |
+          echo $PROJECT_SERVER
+          echo $PROJECT_DATABASE  
