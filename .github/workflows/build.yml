@@ -11,11 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Upload README.md
-        uses: actions/upload-artifact@v2
-        with:
-          name: readme-md
-          path: ./README.md
+      # - name: Upload README.md
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: readme-md
+      #     path: ./README.md
 
       - name: Download README.md
         uses: actions/download-artifact@v2
