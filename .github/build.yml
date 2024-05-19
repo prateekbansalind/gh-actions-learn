@@ -1,21 +1,18 @@
-name: dotnet Build
+name: Example Workflow
 
-on:
-  push:
-    branches:
-    - main
+on: [push]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [10.x]
-        steps:
+  build:
+    runs-on: ubuntu-latest
 
-        - uses: actions/checkout@main
-        - uses: actions/setup-dotnet@v1
-            with:
-                dotnet-version: '3.1.x'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - run: dotnet build awesomeproject
+      - name: Print GitHub Variables
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Commit SHA: $GITHUB_SHA"
+          echo "Branch/Tag: $GITHUB_REF"
+          echo "Workflow: $GITHUB_WORKFLOW"
