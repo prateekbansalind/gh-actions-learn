@@ -1,18 +1,21 @@
-# .github/workflows/build.yml
-name: Node Build.
+name: dotnet Build
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+    - main
 
 jobs:
-    mainbuild:
- 
-        runs-on: ubuntu
-     
-         
-    steps:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [10.x]
+        steps:
 
-    - uses: actions/checkout@v1
+        - uses: actions/checkout@main
+        - uses: actions/setup-dotnet@v1
+            with:
+                dotnet-version: '3.1.x'
 
-    - name: Install NPM and build.
-      run: |
-        echo "Hello!"
+        - run: dotnet build awesomeproject
