@@ -21,3 +21,6 @@ jobs:
 
       - name: Display secret value
         run: echo ${{ env.job_secret }}
+
+      - name: Display secret value
+        run: echo ${{ env.job_secret }} 
