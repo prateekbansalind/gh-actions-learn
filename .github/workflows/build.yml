@@ -13,3 +13,9 @@ jobs:
 
       - name: Test Database Connectivity
         run: echo ${{ secrets.DBUserName }} ${{ secrets.DBPassword }}
+
+      - shell: pwsh
+        env:
+          DB_PASSWORD: ${{ secrets.DBPassword }}
+        run: |
+          db_test "$env:DB_PASSWORD"  
