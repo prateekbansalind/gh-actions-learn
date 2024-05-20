@@ -12,12 +12,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test Database Connectivity
-        with:
-          db_username: ${{ secrets.DBUserName }}
-          db_password: ${{ secrets.DBPassword }}
-        run: echo $db_username $db_password
-
-
-
-
-          
+        run: echo ${{ secrets.DBUserName }} ${{ secrets.DBPassword }}
