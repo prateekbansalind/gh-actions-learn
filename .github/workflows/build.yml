@@ -4,10 +4,13 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-    - name: first step
+    - name: Greeting One
       run: echo "Hello how are you?"
-    - name: second step 
-      run: echo "I am awesome."
+    - name: Greeting Step 
+      run: |
+        echo "I am awesome !"
+        echo "how are you?"
+        
 
 
       
