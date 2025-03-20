@@ -1,26 +1,14 @@
-name: Test Secrets in Conditionals
-
-on: [push]
-
+name: first workflow
+on: workflow_dispatch
 jobs:
-  test-secrets:
+  first-job:
     runs-on: ubuntu-latest
-    env:
-      job_secret: ${{ secrets.JobSecret }}  # Set the secret as a job-level environment variable
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
+    - name: first step
+      run: echo "Hello how are you?"
+    - name: second step 
+      run: echo "I am awesome."
 
-      - name: Check if secret has a value
-        if: ${{ env.job_secret != '' }}
-        run: echo 'The secret has a value set.'
 
-      - name: Check if secret is empty
-        if: ${{ env.job_secret == '' }}
-        run: echo 'The secret does not have a value set.'
-
-      - name: Display secret value
-        run: echo ${{ env.job_secret }}
-
-      - name: Display secret value
-        run: echo ${{ env.job_secret }} 
+      
+  
