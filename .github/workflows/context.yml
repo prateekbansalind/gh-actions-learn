@@ -6,4 +6,6 @@ jobs:
     steps:
       - name: check github context
         run: echo "${{ toJSON(github) }}"
+      - name: welcome
+        run: echo "Welcome"
         
